@@ -104,43 +104,52 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 /* téléphones */
 .phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 @media (max-width:980px){.phones{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}}
-.ph{display:grid;gap:10px;justify-items:center;min-width:0}
-.phone{width:100%;max-width:310px;background:var(--frame);border-radius:38px;padding:10px;box-shadow:0 22px 40px -22px rgba(0,0,0,.6)}
-.screen{background:#fff;color:var(--site-ink);border-radius:30px;overflow:hidden;min-height:560px;display:flex;flex-direction:column}
-.status{display:flex;justify-content:space-between;padding:10px 22px 4px;font:600 12px var(--body)}
-.notch{width:90px;height:22px;background:var(--frame);border-radius:0 0 14px 14px;margin:-10px auto 0}
-.sc{padding:10px 18px 18px;display:grid;gap:12px;flex:1;align-content:start}
-.sc h4{margin:0;font-size:19px}
-.sc .q{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--site-muted)}
-.opt{border:1px solid var(--site-line);border-radius:12px;padding:10px 12px;display:flex;gap:10px;align-items:center;font-size:14px}
-.opt small{display:block;color:var(--site-muted);font-size:12px}
-.opt .r{width:16px;height:16px;border-radius:50%;border:2px solid #cfc6cb;flex:none}
+.ph{display:grid;gap:12px;justify-items:center;align-content:start;min-width:0}
+/* téléphone aux proportions d'un smartphone (390 x 844) */
+.phone{width:100%;max-width:290px;background:var(--frame);border-radius:46px;padding:9px;box-shadow:0 0 0 1.5px #3a3437 inset,0 22px 40px -22px rgba(0,0,0,.6)}
+.screen{position:relative;background:#fff;color:var(--site-ink);border-radius:38px;overflow:hidden;aspect-ratio:390/844;display:flex;flex-direction:column;font-size:13px}
+.island{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:14px;background:#000}
+.status{display:flex;justify-content:space-between;align-items:center;padding:13px 24px 0 28px;height:44px;font:700 12.5px var(--body);flex:none}
+.status .sig{display:flex;gap:4px;align-items:center;font-size:11px}
+.status .bat{width:20px;height:10px;border:1.5px solid currentColor;border-radius:3px;position:relative;opacity:.9}
+.status .bat::after{content:"";position:absolute;inset:1.5px 4px 1.5px 1.5px;background:currentColor;border-radius:1px}
+.sc{padding:4px 16px 0;display:flex;flex-direction:column;gap:8px;flex:1;min-height:0;overflow:hidden}
+.sc.center{justify-content:center;gap:10px;padding-bottom:6px}
+.foot{padding:8px 16px 0;display:grid;gap:6px;flex:none}
+.home{width:108px;height:4px;border-radius:3px;background:#1c1519;margin:8px auto 7px;flex:none}
+.sc h4{margin:0;font-size:17px}
+.sc .q{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--site-muted)}
+.opt{border:1px solid var(--site-line);border-radius:11px;padding:7px 10px;display:flex;gap:9px;align-items:center;font-size:13px;line-height:1.25}
+.opt small{display:block;color:var(--site-muted);font-size:11px}
+.s2 .opt{padding:7px 10px}
+.s2 .opt small{display:inline;margin-left:5px}
+.opt .r{width:14px;height:14px;border-radius:50%;border:2px solid #cfc6cb;flex:none}
 .opt.sel{border-color:var(--brand-2);background:var(--site-alt)}
 .opt.sel .r{border-color:var(--brand-2);background:radial-gradient(var(--brand-2) 0 4px,#fff 5px)}
 .opt .side{margin-left:auto;font-size:11px;font-weight:700;color:var(--ok)}
-.seg{display:flex;background:var(--site-alt);border-radius:10px;padding:3px;font-size:13px;font-weight:600}
-.seg span{flex:1;text-align:center;padding:7px 4px;border-radius:8px;color:var(--site-muted)}
+.seg{display:flex;background:var(--site-alt);border-radius:9px;padding:2px;font-size:12px;font-weight:600}
+.seg span{flex:1;text-align:center;padding:5px 4px;border-radius:8px;color:var(--site-muted)}
 .seg .on{background:#fff;color:var(--site-ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .amtrow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.amtrow span{border:1px solid var(--site-line);border-radius:10px;padding:8px 0;text-align:center;font-weight:700;font-size:14px}
+.amtrow span{border:1px solid var(--site-line);border-radius:9px;padding:6px 0;text-align:center;font-weight:700;font-size:13px}
 .amtrow .on{background:var(--brand-2);border-color:var(--brand-2);color:#fff}
-.big{font-size:30px;font-weight:800;text-align:center;color:var(--brand-deep)}
-.big small{display:block;font-size:12px;font-weight:500;color:var(--site-muted)}
-.cta{background:var(--brand);color:#fff;border-radius:14px;text-align:center;padding:13px;font-weight:700;font-size:15px;margin-top:auto}
-.recap{background:var(--site-alt);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;font-size:13px}
+.big{font-size:26px;line-height:1.1;font-weight:800;text-align:center;color:var(--brand-deep)}
+.big small{display:block;font-size:11px;font-weight:500;color:var(--site-muted)}
+.cta{background:var(--brand);color:#fff;border-radius:13px;text-align:center;padding:11px;font-weight:700;font-size:14px}
+.recap{background:var(--site-alt);border-radius:10px;padding:7px 10px;display:flex;justify-content:space-between;gap:6px;font-size:12px}
 .recap a{color:var(--brand-2);font-weight:700;text-decoration:none}
-.field{border:1px solid var(--site-line);border-radius:10px;padding:9px 12px;font:14px var(--mono);color:var(--site-ink)}
-.field-l{font-size:12px;color:var(--site-muted)}
-.hint{font-size:12px;color:var(--site-muted);text-align:center}
-.wait{display:flex;gap:10px;align-items:center;font-size:13px;background:#fff8e6;border-radius:10px;padding:9px 11px;color:#5a4500}
-.check{width:58px;height:58px;border-radius:50%;background:var(--ok);display:grid;place-items:center;justify-self:center;margin-top:8px}
+.field{border:1px solid var(--site-line);border-radius:9px;padding:7px 10px;font:12.5px var(--mono);color:var(--site-ink)}
+.field-l{font-size:11px;margin-bottom:-4px;color:var(--site-muted)}
+.hint{font-size:10.5px;margin:0;color:var(--site-muted);text-align:center}
+.wait{display:flex;gap:10px;align-items:center;font-size:11.5px;line-height:1.35;background:#fff8e6;border-radius:9px;padding:7px 10px;color:#5a4500}
+.check{width:54px;height:54px;border-radius:50%;background:var(--ok);display:grid;place-items:center;align-self:center}
 .check svg{width:28px;height:28px}
-.rcpt{border:1px dashed var(--brand-2);border-radius:12px;padding:12px;display:grid;gap:6px;font-size:13px}
+.rcpt{border:1px dashed var(--brand-2);border-radius:11px;padding:10px;display:grid;gap:5px;font-size:12px}
 .rcpt div{display:flex;justify-content:space-between;gap:8px}
 .rcpt span:first-child{color:var(--site-muted)}
-.verse{font-size:12.5px;font-style:italic;color:var(--site-muted);text-align:center}
+.verse{margin:0;font-size:11px;line-height:1.4;font-style:italic;color:var(--site-muted);text-align:center}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.two span{border:1px solid var(--site-line);border-radius:12px;text-align:center;padding:10px;font-weight:700;font-size:13px}
+.two span{border:1px solid var(--site-line);border-radius:12px;text-align:center;padding:9px 6px;font-weight:700;font-size:12px;display:grid;place-items:center}
 .two span:last-child{background:var(--brand);color:#fff;border-color:var(--brand)}
 .ph figcaption{font-size:14px;color:var(--ink-2);text-align:center;max-width:300px}
 .ph figcaption b{color:var(--ink)}
@@ -239,40 +248,39 @@ td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
 <section class="wrap plate" aria-labelledby="p2">
   <div class="plate-head"><span class="num">2</span><h2 id="p2">Le don sur téléphone, en trois écrans</h2><small>Mobile, 390 px</small><p class="cap">Le partenaire donne depuis le lien placé sous chaque culte, dans sa devise, sans chercher le bon compte selon son pays.</p></div>
   <div class="phones">
-    <figure class="ph"><div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>9:41</span><span>4G</span></div>
+    <figure class="ph"><div class="phone"><div class="screen"><div class="island"></div><div class="status"><span>9:41</span><span class="sig">4G <i class="bat"></i></span></div>
       <div class="sc">
         <h4>Faire un don</h4>
         <span class="q">Pour quoi donnez-vous ?</span>
         <div class="opt sel"><span class="r"></span><span>Les Bâtisseurs<small>Partenariat du ministère</small></span></div><div class="opt"><span class="r"></span><span>Dîme<small>Église La Porte des Cieux</small></span></div><div class="opt"><span class="r"></span><span>Offrande<small>Culte, action de grâce</small></span></div><div class="opt"><span class="r"></span><span>Installation à Kinshasa<small>Nouvelle adresse</small></span></div>
-        <div class="seg"><span class="on">Une fois</span><span>Chaque mois</span></div>
-        <div class="seg"><span class="on">Euro</span><span>Dollar</span><span>Franc congolais</span></div>
+        <div class="seg"><span>Une fois</span><span class="on">Chaque mois</span></div>
+        <div class="seg"><span class="on">Euro</span><span>Dollar</span><span>Franc FC</span></div>
         <div class="amtrow"><span>20 €</span><span class="on">50 €</span><span>100 €</span><span>Autre</span></div>
         <div class="big tnum">50 €<small>Chaque mois, modifiable à tout moment</small></div>
-        <div class="cta">Continuer</div>
-      </div></div></div>
+      </div>
+      <div class="foot"><div class="cta">Continuer</div></div><div class="home"></div></div></div>
       <figcaption><b>1. Choisir l'objet et le montant.</b> Bâtisseurs, dîme, offrande ou projet, en euros, dollars ou francs congolais.</figcaption></figure>
 
-    <figure class="ph"><div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>9:41</span><span>4G</span></div>
-      <div class="sc">
+    <figure class="ph"><div class="phone"><div class="screen"><div class="island"></div><div class="status"><span>9:41</span><span class="sig">4G <i class="bat"></i></span></div>
+      <div class="sc s2">
         <h4>Moyen de paiement</h4>
         <div class="recap"><span>Les Bâtisseurs · <b class="tnum">50 € / mois</b></span><a href="#p2">Modifier</a></div>
         <div class="opt sel"><span class="r"></span><span>Carte<small>Visa, Mastercard</small></span></div><div class="opt"><span class="r"></span><span>PayPal<small></small></span></div><div class="opt"><span class="r"></span><span>Virement SEPA<small>Europe</small></span></div><div class="opt"><span class="r"></span><span>M-Pesa<small>RD Congo</small></span></div><div class="opt"><span class="r"></span><span>Orange Money<small>RD Congo</small></span></div><div class="opt"><span class="r"></span><span>Airtel Money<small>RD Congo</small></span></div>
         <span class="field-l">Votre carte</span>
         <div class="field">•••• •••• •••• 4821</div>
-        <div class="wait">Une demande de confirmation s'affiche sur votre téléphone : tapez votre code secret pour valider.</div>
-        <div class="cta">Payer 50 €</div>
-        <p class="hint">Paiement sécurisé, aucun numéro de compte à recopier</p>
-      </div></div></div>
+        <div class="wait">Confirmez le paiement sur votre téléphone avec votre code secret.</div>
+      </div>
+      <div class="foot"><div class="cta">Payer 50 €</div><p class="hint" style="text-align:center">Paiement sécurisé, aucun numéro à recopier</p></div><div class="home"></div></div></div>
       <figcaption><b>2. Payer avec son moyen habituel.</b> Carte, PayPal ou virement SEPA en Europe ; M-Pesa, Orange Money ou Airtel Money en RD Congo.</figcaption></figure>
 
-    <figure class="ph"><div class="phone"><div class="screen"><div class="notch"></div><div class="status"><span>9:41</span><span>4G</span></div>
-      <div class="sc">
+    <figure class="ph"><div class="phone"><div class="screen"><div class="island"></div><div class="status"><span>9:41</span><span class="sig">4G <i class="bat"></i></span></div>
+      <div class="sc center">
         <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
         <h4 style="text-align:center">Merci, Patrick. Vous êtes Bâtisseur.</h4>
         <div class="rcpt tnum"><div><span>Reçu n°</span><span>PDC-2026-10-0391</span></div><div><span>Date</span><span>11 oct. 2026, 18 h 05</span></div><div><span>Objet</span><span>Les Bâtisseurs, chaque mois</span></div><div><span>Payé avec</span><span>Carte</span></div><div><span>Montant</span><span>50 €</span></div><div><span>Envoyé sur</span><span>WhatsApp et e-mail</span></div></div>
         <p class="verse">« Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie. » 2 Corinthiens 9:7</p>
-        <div class="two"><span>Le reçu PDF</span><span>Mon espace Bâtisseur</span></div>
-      </div></div></div>
+      </div>
+      <div class="foot"><div class="two"><span>Le reçu PDF</span><span>Mon espace Bâtisseur</span></div></div><div class="home"></div></div></div>
       <figcaption><b>3. Le reçu part tout seul.</b> Numéroté, au nom du donateur, envoyé sur WhatsApp et par e-mail, sans intervention de l'équipe.</figcaption></figure>
   </div>
 </section>
